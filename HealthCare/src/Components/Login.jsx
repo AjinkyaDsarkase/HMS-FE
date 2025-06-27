@@ -1,17 +1,14 @@
-import React from 'react'
-import LogoHead from './LogoHead'
-import heaxagon from '../assets/hexagon.jpg'
-import cubes from '../assets/cubes.jpg'
+
 import '../styles/Login.css'
 
 function Login() {
 
     function OnClickGoogle(){
-        window.location.href = 'https://accounts.google.com/v3/signin/accountchooser?continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&ifkv=AdBytiOj7KzT152VAuyfvkPCUfxOTkY51CgFjpmE5GwiesL5fOB4SfBjmIXrnz6F4N7w6p5v02bd&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S322438728%3A1751022836077403';  
+        window.location.href = ('https://accounts.google.com/v3/signin/accountchooser?continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&ifkv=AdBytiOj7KzT152VAuyfvkPCUfxOTkY51CgFjpmE5GwiesL5fOB4SfBjmIXrnz6F4N7w6p5v02bd&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S322438728%3A1751022836077403');  
     }
 
     function OnClickFacebook(){
-        window.location.href = 'https://www.facebook.com/';
+        window.open('https://www.facebook.com/');
     }
 
   return (
@@ -20,19 +17,19 @@ function Login() {
             <img src="https://preclinic.dreamstechnologies.com/html/template/assets/img/logo.svg" alt="" />
             <form action='index.html'>
                 <div className='signin-details'>
-                    <h3>Sign In</h3>
+                    <h2>Sign In</h2>
                     <p style={{color : '#9DA4B0'}}>Please enter below details to access the dashboard</p>
                 </div>
                 <div className='email-pass'>     
                     <label htmlFor="">Email Address</label>
                     <div className='inputs'>
                         <div className='icon'><i class="fa-regular fa-envelope"></i></div>
-                        <input type="text" placeholder='Enter email address'/>
+                        <input type="email" placeholder='Enter email address'/>
                     </div>
                     <label htmlFor="">Password</label>
                     <div className='inputs'>
                         <div className='icon'><i class="fa-solid fa-lock"></i></div>
-                        <input type="text" placeholder='*********'/>
+                        <input type="password" placeholder='*********'/>
                     </div>
                 </div>
                 <div className='check-pass'>
@@ -47,7 +44,7 @@ function Login() {
                 <div>
                     <button className='btn-log-in'>Log In</button>
                 </div>
-                <p style={{width:'100%', textAlign:'center',color:'#9DA4B0'}}>OR</p>
+                <p style={{width:'100%', textAlign:'center',color:'#9DA4B0', marginBottom:'2vh'}}>OR</p>
                 <div className='btn-socials'>
                     <button onClick={() => OnClickGoogle()} className='btn'><i class="fa-brands fa-google"></i></button>
                     <button onClick={() => OnClickFacebook()} className='btn'><i class="fa-brands fa-facebook"></i></button>
