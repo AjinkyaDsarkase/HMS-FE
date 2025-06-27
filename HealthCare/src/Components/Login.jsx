@@ -17,15 +17,14 @@ function Login() {
                 <div className='email-pass'>     
                     <label htmlFor="">Email Address</label>
                     <div className='inputs'>
-                        <i class="fa-regular fa-envelope"></i>
-                        <input type="text" />
+                        <div className='icon'><i class="fa-regular fa-envelope"></i></div>
+                        <input type="text" placeholder='Enter email address'/>
                     </div>
                     <label htmlFor="">Password</label>
                     <div className='inputs'>
-                        <i class="fa-regular fa-envelope"></i>
-                        <input type="text" />
+                        <div className='icon'><i class="fa-solid fa-lock"></i></div>
+                        <input type="text" placeholder='*********'/>
                     </div>
-                    
                 </div>
                 <div></div>
                 <div></div>
