@@ -5,9 +5,18 @@ import cubes from '../assets/cubes.jpg'
 import '../styles/Login.css'
 
 function Login() {
+
+    function OnClickGoogle(){
+        window.location.href = 'https://accounts.google.com/v3/signin/accountchooser?continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&ifkv=AdBytiOj7KzT152VAuyfvkPCUfxOTkY51CgFjpmE5GwiesL5fOB4SfBjmIXrnz6F4N7w6p5v02bd&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S322438728%3A1751022836077403';  
+    }
+
+    function OnClickFacebook(){
+        window.location.href = 'https://www.facebook.com/';
+    }
+
   return (
     <>
-        <div className = 'login-form'>
+        <div className = 'login-form '>
             <img src="https://preclinic.dreamstechnologies.com/html/template/assets/img/logo.svg" alt="" />
             <form action='index.html'>
                 <div className='signin-details'>
@@ -26,9 +35,26 @@ function Login() {
                         <input type="text" placeholder='*********'/>
                     </div>
                 </div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <div className='check-pass'>
+                    <div className='check-label'>
+                        <input type="checkbox" name="" id="" />
+                        <label htmlFor="">Remember me</label>
+                    </div>
+                    <div>
+                        <a href="">Forgot Password</a>
+                    </div>
+                </div>
+                <div>
+                    <button className='btn-log-in'>Log In</button>
+                </div>
+                <p style={{width:'100%', textAlign:'center',color:'#9DA4B0'}}>OR</p>
+                <div className='btn-socials'>
+                    <button onClick={() => OnClickGoogle()} className='btn'><i class="fa-brands fa-google"></i></button>
+                    <button onClick={() => OnClickFacebook()} className='btn'><i class="fa-brands fa-facebook"></i></button>
+                </div>
+                <div className='form-foot'>
+                    <p>Don't have an account yet? <a href="">Register</a></p>
+                </div>
             </form>
         </div>
     </>

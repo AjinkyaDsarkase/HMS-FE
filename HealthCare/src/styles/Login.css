@@ -6,10 +6,10 @@
 .login-form{
     width : 100%;
     height : 92vh;
-    background-image : url('');
-    background : no-repeat;
-    background-size : cover;
-    border : 2px solid red;
+    background-image : url('../assets/hexagon.jpg');
+    /* background : no-repeat;
+    background-size : cover; */
+    /* border : 2px solid red; */
     display : flex;
     flex-direction : column;
     align-items : center;
@@ -18,9 +18,13 @@
 form{
     width : 36%; 
     height : 75vh; 
-    border : 1px solid black;
+    border : 1px solid #9DA4B0;
     border-radius : 10px;
     padding : 30px;
+    background-color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+
 }
 .signin-details{
     display : flex;
@@ -38,16 +42,11 @@ form{
     display : flex;
     flex-direction : column;
     justify-content : space-between;
+    margin-bottom: 2vh;
 }
 .email-pass label{
     font-family : sans-serif ;
 }
-/* .email-pass input{
-    
-    border-radius : 10px;
-    border : 1px solid #9DA4B0;
-    padding: 5px;
-} */
 .inputs{
     display: flex;
     width: 100%;
@@ -67,4 +66,53 @@ form{
 }
 .inputs i{
     margin-right: 10px;
+}
+.check-pass{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+    margin-bottom: 2vh;
+}
+.check-label{
+    width: 26%;
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+    font-family : sans-serif ;
+}
+.btn-log-in{
+    width: 100%;
+    height: 5vh;
+    color: white;
+    background-color: rgb(23, 23, 163);
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 4vh;
+}
+.btn-socials{
+    display: flex;
+    width: 100%;
+    height: 7vh;
+    /* border: 1px solid black; */
+    justify-content: space-between;
+    margin-bottom: 2vh;
+}
+.btn{
+    width: 40%;
+    background-color: white;
+    color: blue;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: larger;
+    border: 1px solid #9DA4B0;
+}
+.btn:hover{
+    background-color: #9DA4B0;
+}
+.form-foot{
+    font-family : sans-serif ;
+    width: 100%;
+    text-align: center;
 }
