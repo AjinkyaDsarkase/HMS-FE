@@ -1,82 +1,99 @@
-import React from "react";
+import React, { useState } from "react";
+import "./LoginPage.css";
 
-export default function LoginPage() {
+const LoginPage = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    agreed: false,
+  });
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.agreed) {
+      alert("Please agree to the terms.");
+      return;
+    }
+    // Simulate form submission
+    console.log("Form Submitted:", formData);
+  };
+
   return (
-    <div style={{ display: "flex", minHeight: "100vh" }}>
-      {/* Left Side - Branding */}
-      <div
-        style={{
-          flex: 1,
-          backgroundColor: "#007BFF",
-          color: "white",
-          padding: "40px",
-          backgroundImage: "url('/stethoscope.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "relative",
-        }}
-      >
-        <div style={{ position: "relative", zIndex: 1 }}>
-          <h2>MEDIGRAPH</h2>
-          <p>
-            Empowering Healthcare, One Click at a Time:
-            <br />
-            Your Health, Your Records, Your Control.
-          </p>
-        </div>
-        <div
-          style={{
-            backgroundColor: "rgba(0,0,0,0.4)",
-            position: "absolute",
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-          }}
-        ></div>
-      </div>
+    <div className="register-container">
+      <div className="register-box">
+        <h2 className="title">Register</h2>
+        <p className="subtitle">Please enter your details to create an account</p>
+        <form onSubmit={handleSubmit}>
+          <label>Full Name</label>
+          <input
+            type="text"
+            name="fullName"
+            value={formData.fullName}
+            onChange={handleChange}
+            placeholder="Enter Name"
+            required
+          />
 
-      {/* Right Side - Form */}
-      <div style={{ flex: 1, padding: "40px" }}>
-        <h2>Login</h2>
-        <p>Log in to your account.</p>
-        <form>
-          <div style={{ marginBottom: "15px" }}>
-            <label>Email:</label>
-            <br />
+          <label>Email Address</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Enter Email Address"
+            required
+          />
+
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="Enter Password"
+            required
+          />
+
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            placeholder="Confirm Password"
+            required
+          />
+
+          <div className="checkbox-wrapper">
             <input
-              type="email"
-              placeholder="Enter your email"
-              style={{ width: "100%", padding: "8px" }}
+              type="checkbox"
+              name="agreed"
+              checked={formData.agreed}
+              onChange={handleChange}
             />
+            <span>
+              I agree to the <a href="#">Terms of Service</a> &{" "}
+              <a href="#">Privacy Policy</a>
+            </span>
           </div>
-          <div style={{ marginBottom: "15px" }}>
-            <label>Password:</label>
-            <br />
-            <input
-              type="password"
-              placeholder="Enter your password"
-              style={{ width: "100%", padding: "8px" }}
-            />
-            <div style={{ textAlign: "right" }}>
-              <a href="#">Forgot Password?</a>
-            </div>
-          </div>
-          <div>
-            <button type="submit" style={{ padding: "10px 20px" }}>
-              Log In
-            </button>
-          </div>
-          <div style={{ marginTop: "10px" }}>
-            <button type="button" style={{ padding: "10px 20px" }}>
-              Log in with Google
-            </button>
-          </div>
+
+          <button type="submit" className="submit-btn">
+            Register
+          </button>
         </form>
-        <p style={{ marginTop: "20px" }}>
-          Don’t have an account? <a href="#">Sign Up</a>
-        </p>
       </div>
     </div>
   );
-}
+};
+
+export default LoginPage;
