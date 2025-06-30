@@ -1,6 +1,6 @@
 
 import { useNavigate } from 'react-router-dom';
-import '../styles/Login.css'
+import './Login.css'
 import { useAuth0 } from '@auth0/auth0-react';
 
 function Login() {
@@ -17,6 +17,10 @@ function Login() {
 
     function OnClickFacebook(){
         // window.open('https://www.facebook.com/');
+    }
+
+    function redirectToSignUp(){
+        navigate('/signup')
     }
 
   return (
@@ -59,7 +63,7 @@ function Login() {
                     <button onClick={() => OnClickFacebook()} className='btn'><i class="fa-brands fa-facebook"></i></button>
                 </div>
                 <div className='form-foot'>
-                    <p>Don't have an account yet? <a href="">Register</a></p>
+                    <p>Don't have an account yet? <a href="" onClick={() => redirectToSignUp()}>Register</a></p>
                 </div>
             </form>
         </div>
