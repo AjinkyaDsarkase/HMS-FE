@@ -1,4 +1,4 @@
-/* Apply full height */
+/* Base styles */
 html,
 body {
   height: 100%;
@@ -7,7 +7,6 @@ body {
   background: linear-gradient(to bottom right, #f0f2f5, #e4e6eb);
 }
 
-/* Center container */
 .register-container {
   display: flex;
   justify-content: center;
@@ -15,16 +14,16 @@ body {
   height: 100vh;
 }
 
-/* Registration box styling */
 .register-box {
   background-color: white;
   padding: 30px;
   border-radius: 10px;
   width: 100%;
+  max-width: 400px;
   display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -50,6 +49,10 @@ input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
+}
+
+.error-input {
+  border: 1px solid red !important;
 }
 
 .checkbox-wrapper {
@@ -84,4 +87,12 @@ input[type="password"] {
 
 .submit-btn:hover {
   background-color: #0056b3;
+}
+
+.error-text {
+  color: red;
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  display: block;
 }
