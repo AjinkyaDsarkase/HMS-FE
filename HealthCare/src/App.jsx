@@ -4,6 +4,8 @@ import Login from './Components/Login'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import AjinkyaProfile from './Components/AjinkyaProfile'
 
+import LogoHead from './Components/LogoHead'
+import LoginPage from "./register/LoginPage"
 function App() {
 
   return (
@@ -15,6 +17,9 @@ function App() {
     </Routes>
     </BrowserRouter>
     
+    {/* <LogoHead/>   */}
+    {/* <Login/> */}
+    <LoginPage/>
     </>
   )
 }
