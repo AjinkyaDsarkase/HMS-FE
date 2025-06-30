@@ -1,6 +1,6 @@
 
 import { useNavigate } from 'react-router-dom';
-import './Login.css'
+import './Login.css';
 import { useAuth0 } from '@auth0/auth0-react';
 
 function Login() {
@@ -36,12 +36,12 @@ function Login() {
                     <label htmlFor="">Email Address</label>
                     <div className='inputs'>
                         <div className='icon'><i class="fa-regular fa-envelope"></i></div>
-                        <input type="email" placeholder='Enter email address'/>
+                        <input style={{border:'none',marginTop:'10px'}} type="email" placeholder='Enter email address'/>
                     </div>
                     <label htmlFor="">Password</label>
                     <div className='inputs'>
                         <div className='icon'><i class="fa-solid fa-lock"></i></div>
-                        <input type="password" placeholder='*********'/>
+                        <input style={{border:'none',marginTop:'10px'}} type="password" placeholder='*********'/>
                     </div>
                 </div>
                 <div className='check-pass'>
